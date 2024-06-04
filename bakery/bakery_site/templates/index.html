@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+        @font-face {
+            font-family: 'Philosopher';
+            src: url('fonts/Philosopher/Philosopher-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: url('fonts/Roboto/Roboto.ttf') format('truetype');
+        }
+
+    </style>
+</head>
+<body>
+    <div class='header'></div>
+        <div class="logo-container">
+            <img src="{% static '01-Logo.svg' %}" alt="Logo" class="logo" />
+        </div>
+    
+        <nav class="navigation">
+            <span>О НАС</span>
+            <span>НОВОСТИ</span>
+            <span>МЕНЮ</span>
+            <span>КОНТАКТЫ</span>
+        </nav>
+    </div>
+
+
+    <div class="bottom-image-container">
+        <img src="{% static '01-Картинка-фона.jpg' %}" alt="Image" class="bottom-image"> 
+    </div>
+
+    <div class="rectangle">
+        <div class="border">
+            <h1>Рецепт дня: {{ recipe.title }}</h1>
+            <p>{{ recipe.content }}</p>  
+        </div>
+    </div>
+
+
+    <div class="images-container">
+        <img src="{% static '03-Иконка.svg' %}" alt="Image 1" class="images-item">
+        <img src="{% static '02-Иконка.svg' %}"alt="Image 2" class="images-item">
+        <img src="{% static '01-Иконка.svg' %}" alt="Image 3" class="images-item">
+    </div>
+
+
+    <div class="title-container">
+        <h2>Выпечка - <span style="color: #F15B40;">это</span> <span style="color: black;">вкусно</span></h2>
+        <p class="subtitle">Мы – команда пекарей, влюбленных в свое дело и в аромат свежего хлеба. Наша пекарня – это место, где каждый день рождаются вкусные истории, сотканные из муки, сахара и любви. Мы не просто печем, мы создаем. Используем только натуральные ингредиенты, не добавляем консервантов и искусственных ароматизаторов. Мы верим, что настоящая выпечка – это вкус детства, тепло домашнего очага и радость, которую хочется делиться с близкими. Мы не боимся экспериментировать и создавать собственные рецепты, чтобы удивить вас новыми вкусами и ароматами. Приходите к нам в гости! Мы всегда рады угостить вас свежей выпечкой и чашечкой ароматного кофе.</p>
+    </div>
+
+    <div class="order-title">
+        <div class="order-title">
+            <h3>НАША ПРОДУКЦИЯ</h3>
+            <p class="subtitle">В нашей пекарне мы творим волшебство из муки, сахара и любви. Каждая булка, каждый пирожок, каждый торт - это результат мастерства наших пекарей и страсти к своему делу. Мы используем только свежие, натуральные ингредиенты, чтобы вам достался вкус, который не оставит равнодушным.</p>
+            <br>
+            <ul>
+                {% for product in products %}
+                <li>{{ product.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    <div class="order-title">
+        <h3>ЗАКАЗАТЬ</h3>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8190343.732650451!2d11.87477554999999!3d59.922258000000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631b98131161b%3A0x26c1a44c68aab331!2z0J_QuNGA0L7Qs9C-0LLRi9C5INCU0LLQvtGA0LjQug!5e0!3m2!1sru!2skg!4v1714662034503!5m2!1sru!2skg" width="900" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <div class="footer-navigation">
+        <nav class="navigation">
+            <span>О НАС</span>
+            <span>НОВОСТИ</span>
+            <span>МЕНЮ</span>
+            <span>КОНТАКТЫ</span>
+        </nav>
+    </div>
+    
+</body>
+</html>
